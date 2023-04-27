@@ -39,7 +39,7 @@ public class ProductServiceController {
         if(product.isPresent())
             return ResponseEntity.ok().body(product.get());
         else
-            throw new ProductNotFoundException("Film was not found " + id);
+            throw new ProductNotFoundException("Film was not found with the id of " + id);
     }
 }
 
