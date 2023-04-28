@@ -1,6 +1,7 @@
 package com.msa.assignment.productService.controller;
 
-import com.msa.assignment.productService.dao.ProductServiceRepository;
+import com.msa.assignment.productService.dao.ProductDao;
+import com.msa.assignment.productService.repository.ProductServiceRepository;
 import com.msa.assignment.productService.entity.Product;
 import com.msa.assignment.productService.exceptions.ProductNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -40,6 +41,10 @@ public class ProductServiceController {
             return ResponseEntity.ok().body(product.get());
         else
             throw new ProductNotFoundException("Film was not found with the id of " + id);
+    }
+    @GetMapping(value="/{id}/{delayMs}")
+    public Product getFilmDelayed(@PathVariable("id") Long id, @PathVariable int delayMs) {
+        return ProductDao.getById(id, delayMs);
     }
 }
 

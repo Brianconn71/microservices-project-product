@@ -1,4 +1,4 @@
-package com.msa.assignment.productService.dao;
+package com.msa.assignment.productService.repository;
 
 
 import com.msa.assignment.productService.entity.Product;
@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ProductServiceRepository extends JpaRepository<Product, Long> {
+
 }
